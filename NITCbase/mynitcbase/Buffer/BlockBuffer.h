@@ -2,6 +2,7 @@
 #define NITCBASE_BLOCKBUFFER_H
 
 #include <cstdint>
+#include <cstring>
 
 #include "../Disk_Class/Disk.h"
 #include "../define/constants.h"
@@ -44,12 +45,47 @@ class BlockBuffer {
   int blockNum;
   // methods
   int loadBlockAndGetBufferPtr(unsigned char **buffPtr);
-  int getFreeBlock(int blockType);
-  int setBlockType(int blockType);
-
+ 
  public:
   // methods
-  BlockBuffer(char blockType);
+  static int getFreeBlock(int blockType) {
+    for (int i = 0; i < DISK_BLOCKS; i++) {
+        if (StaticBuffer::blockAllocMap[i] == UNUSED_BLK) {
+            StaticBuffer::blockAllocMap[i] = (unsigned char)blockType;
+            return i;
+        }
+    }
+    return E_DISKFULL;
+  }
+
+  static int setBlockType(int blockNum, int blockType) {
+    if (blockNum < 0 || blockNum >= DISK_BLOCKS) return E_OUTOFBOUND;
+    StaticBuffer::blockAllocMap[blockNum] = (unsigned char)blockType;
+    return SUCCESS;
+  }
+
+  BlockBuffer(char blockType) {
+    int blockTypeInt;
+    if (blockType == 'R') blockTypeInt = REC;
+    else if (blockType == 'I') blockTypeInt = IND_INTERNAL;
+    else if (blockType == 'L') blockTypeInt = IND_LEAF;
+    else blockTypeInt = UNUSED_BLK;
+
+    int freeBlockNum = BlockBuffer::getFreeBlock(blockTypeInt);
+    this->blockNum = freeBlockNum;
+
+    if (freeBlockNum >= 0 && freeBlockNum < DISK_BLOCKS) {
+      struct HeadInfo head;
+      head.blockType = blockTypeInt;
+      head.pblock = -1;
+      head.lblock = -1;
+      head.rblock = -1;
+      head.numEntries = 0;
+      head.numAttrs = 0;
+      head.numSlots = 0;
+      setHeader(&head);
+    }
+  }
   BlockBuffer(int blockNum);
   int getBlockNum();
   int getHeader(struct HeadInfo *head);
@@ -60,7 +96,7 @@ class BlockBuffer {
 class RecBuffer : public BlockBuffer {
  public:
   // methods
-  RecBuffer();
+  RecBuffer() : BlockBuffer('R') {}
   RecBuffer(int blockNum);
   int getSlotMap(unsigned char *slotMap);
   int setSlotMap(unsigned char *slotMap);

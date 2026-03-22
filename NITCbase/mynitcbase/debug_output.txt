@@ -1,0 +1,45 @@
+DEBUG: StaticBuffer::blocks address: 0x5dd96f78c800
+DEBUG: StaticBuffer::blockAllocMap address: 0x5dd96f79c980
+DEBUG: RelCacheTable::relCache array address: 0x5dd96f78c7a0
+DEBUG: AttrCacheTable::attrCache array address: 0x5dd96f78c660
+DEBUG: sizeof(AttrCatEntry) = 48
+DEBUG: sizeof(AttrCacheEntry) = 80
+DEBUG: offset of attrName in AttrCatEntry = 16
+# open table StudentsNew;
+DEBUG: comparing cache attrName='RelName' at address 0x5dd9ac084ab0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac084aa0: 52 45 4c 41 54 49 4f 4e 43 41 54 00 00 00 00 00 52 65 6c 4e 61 6d 65 00 60 ff ff ff ff ff ff 00 01 00 00 00 01 7f 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ff ff ff ff 
+DEBUG: comparing cache attrName='RelName' at address 0x5dd9ac08c6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac08c6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=RollNumber at address 0x5dd9ac0c8780 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c8770: 53 74 75 64 65 6e 74 73 4e 65 77 00 00 00 00 00 52 6f 6c 6c 4e 75 6d 62 65 72 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x5dd9ac08c6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac08c6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=Name at address 0x5dd9ac0c87e0 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c87d0: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 4e 61 6d 65 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x5dd9ac08c6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac08c6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=Marks at address 0x5dd9ac0c8840 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c8830: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 4d 61 72 6b 73 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x5dd9ac08c6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac08c6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=Class at address 0x5dd9ac0c88a0 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c8890: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 43 6c 61 73 73 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x5dd9ac08c6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac08c6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+Relation StudentsNew opened successfully
+# insert into StudentsNew values (1, Ankush, 95.5);
+Error: Mismatch in number of attributes
+# select * from StudentsNew into Temp where RollNo > 0;
+DEBUG: select srcRel=StudentsNew, srcRelId=2
+DEBUG: comparing cache attrName='RollNumber' at address 0x5dd9ac0c8780 with target attrName='RollNo'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c8770: 53 74 75 64 65 6e 74 73 4e 65 77 00 00 00 00 00 52 6f 6c 6c 4e 75 6d 62 65 72 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 0c 00 00 00 ff ff ff ff 
+DEBUG: comparing cache attrName='Name' at address 0x5dd9ac0c87e0 with target attrName='RollNo'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c87d0: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 4e 61 6d 65 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 01 00 00 00 00 00 00 00 05 00 00 00 0d 00 00 00 ff ff ff ff 
+DEBUG: comparing cache attrName='Marks' at address 0x5dd9ac0c8840 with target attrName='RollNo'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c8830: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 4d 61 72 6b 73 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff 02 00 00 00 00 00 00 00 05 00 00 00 0e 00 00 00 ff ff ff ff 
+DEBUG: comparing cache attrName='Class' at address 0x5dd9ac0c88a0 with target attrName='RollNo'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x5dd9ac0c8890: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 43 6c 61 73 73 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 03 00 00 00 00 00 00 00 05 00 00 00 0f 00 00 00 ff ff ff ff 
+DEBUG: getAttrCatEntry(relId=2, attr=RollNo) returned -92
+Error: Attribute does not exist
+# exit
+Closing OpenRelTable...

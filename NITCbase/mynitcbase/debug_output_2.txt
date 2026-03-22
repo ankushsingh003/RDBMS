@@ -1,0 +1,72 @@
+DEBUG: StaticBuffer::blocks address: 0x632811f28800
+DEBUG: StaticBuffer::blockAllocMap address: 0x632811f38980
+DEBUG: RelCacheTable::relCache array address: 0x632811f287a0
+DEBUG: AttrCacheTable::attrCache array address: 0x632811f28660
+DEBUG: sizeof(AttrCatEntry) = 48
+DEBUG: sizeof(AttrCacheEntry) = 80
+DEBUG: offset of attrName in AttrCatEntry = 16
+# open table StudentsNew;
+DEBUG: comparing cache attrName='RelName' at address 0x632823493ab0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x632823493aa0: 52 45 4c 41 54 49 4f 4e 43 41 54 00 00 00 00 00 52 65 6c 4e 61 6d 65 00 60 ff ff ff ff ff ff 00 01 00 00 00 01 7f 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 ff ff ff ff 
+DEBUG: comparing cache attrName='RelName' at address 0x63282349b6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x63282349b6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=RollNumber at address 0x6328234d7780 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d7770: 53 74 75 64 65 6e 74 73 4e 65 77 00 00 00 00 00 52 6f 6c 6c 4e 75 6d 62 65 72 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x63282349b6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x63282349b6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=Name at address 0x6328234d77e0 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d77d0: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 4e 61 6d 65 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x63282349b6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x63282349b6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=Marks at address 0x6328234d7840 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d7830: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 4d 61 72 6b 73 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x63282349b6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x63282349b6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+DEBUG: openRel loaded attr=Class at address 0x6328234d78a0 for relId=2
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d7890: 53 74 75 64 65 6e 74 73 4e 65 77 00 7d 7f 00 00 43 6c 61 73 73 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG: comparing cache attrName='RelName' at address 0x63282349b6c0 with target attrName='RelName'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x63282349b6b0: 41 54 54 52 49 42 55 54 45 43 41 54 00 00 00 00 52 65 6c 4e 61 6d 65 00 6b 00 00 00 ff ff ff 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 06 00 00 00 ff ff ff ff 
+Relation StudentsNew opened successfully
+# insert into StudentsNew values (1, Ankush, 95.5, 10);
+DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache entry after copy: attrName='RollNumber'
+DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache attrName='Name', relName='StudentsNew', offset=1
+DEBUG: (offset search) cache entry after copy: attrName='Name'
+DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache attrName='Name', relName='StudentsNew', offset=1
+DEBUG: (offset search) cache attrName='Marks', relName='StudentsNew', offset=2
+DEBUG: (offset search) cache entry after copy: attrName='Marks'
+DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache attrName='Name', relName='StudentsNew', offset=1
+DEBUG: (offset search) cache attrName='Marks', relName='StudentsNew', offset=2
+DEBUG: (offset search) cache attrName='Class', relName='StudentsNew', offset=3
+DEBUG: (offset search) cache entry after copy: attrName='Class'
+Inserted successfully
+# select * from StudentsNew into Temp where RollNumber > 0;
+DEBUG: select srcRel=StudentsNew, srcRelId=2
+DEBUG: comparing cache attrName='RollNumber' at address 0x6328234d7780 with target attrName='RollNumber'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d7770: 53 74 75 64 65 6e 74 73 4e 65 77 00 00 00 00 00 52 6f 6c 6c 4e 75 6d 62 65 72 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 0c 00 00 00 ff ff ff ff 
+DEBUG: getAttrCatEntry(relId=2, attr=RollNumber) returned 0
+DEBUG: comparing cache attrName='RollNumber' at address 0x6328234d7780 with target attrName='RollNumber'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d7770: 53 74 75 64 65 6e 74 73 4e 65 77 00 00 00 00 00 52 6f 6c 6c 4e 75 6d 62 65 72 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 0c 00 00 00 ff ff ff ff 
+DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache entry after copy: attrName='RollNumber'
+1 | DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache attrName='Name', relName='StudentsNew', offset=1
+DEBUG: (offset search) cache entry after copy: attrName='Name'
+Ankush | DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache attrName='Name', relName='StudentsNew', offset=1
+DEBUG: (offset search) cache attrName='Marks', relName='StudentsNew', offset=2
+DEBUG: (offset search) cache entry after copy: attrName='Marks'
+95 | DEBUG: (offset search) cache attrName='RollNumber', relName='StudentsNew', offset=0
+DEBUG: (offset search) cache attrName='Name', relName='StudentsNew', offset=1
+DEBUG: (offset search) cache attrName='Marks', relName='StudentsNew', offset=2
+DEBUG: (offset search) cache attrName='Class', relName='StudentsNew', offset=3
+DEBUG: (offset search) cache entry after copy: attrName='Class'
+10 | 
+DEBUG: comparing cache attrName='RollNumber' at address 0x6328234d7780 with target attrName='RollNumber'
+DEBUG: HEX DUMP of AttrCacheEntry at 0x6328234d7770: 53 74 75 64 65 6e 74 73 4e 65 77 00 00 00 00 00 52 6f 6c 6c 4e 75 6d 62 65 72 00 00 00 00 00 00 01 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 05 00 00 00 0c 00 00 00 ff ff ff ff 
+Selected successfully into Temp
+# exit
+Closing OpenRelTable...

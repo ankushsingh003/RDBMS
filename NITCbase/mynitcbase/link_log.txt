@@ -1,0 +1,4 @@
+/usr/bin/ld: ./build/Schema/Schema.o: in function `Schema::createRel(char*, int, char (*) [16], int*)':
+Schema.cpp:(.text+0x1ee): undefined reference to `BlockAccess::insert(int, Attribute*)'
+/usr/bin/ld: Schema.cpp:(.text+0x2be): undefined reference to `BlockAccess::insert(int, Attribute*)'
+collect2: error: ld returned 1 exit status

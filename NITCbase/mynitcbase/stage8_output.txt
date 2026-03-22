@@ -1,0 +1,121 @@
+# DROP TABLE Products
+Error: Relation does not exist
+# DROP TABLE Sales
+Error: Relation does not exist
+# DROP TABLE Bills
+Error: Relation does not exist
+# DROP TABLE Stores
+Relation Stores deleted successfully
+# run s8test.txt
+
+----Creating four new relations----
+Relation Products created successfully
+Relation Sales created successfully
+Relation Bills created successfully
+Relation Stores created successfully
+
+----Relation Catalog entries of new relations----
+- TODO:confirm that all the relations are printed
+
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Products | 5 | 0 | -1 | -1 | 24 | 
+Selected successfully into null
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Bills | 4 | 0 | -1 | -1 | 31 | 
+Selected successfully into null
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Sales | 6 | 0 | -1 | -1 | 20 | 
+Selected successfully into null
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Stores | 5 | 0 | -1 | -1 | 24 | 
+Selected successfully into null
+---------------------------------------------
+
+----Attribute Catalog entries of new relations----
+- TODO:check if all the attributes are printed
+
+DEBUG: select srcRel=ATTRIBUTECAT, srcRelId=1
+DEBUG: getAttrCatEntry(relId=1, attr=RelName) returned 0
+Products | id | 0 | -1 | -1 | 0 | 
+Products | name | 1 | -1 | -1 | 1 | 
+Products | cost | 0 | -1 | -1 | 2 | 
+Products | stock | 0 | -1 | -1 | 3 | 
+Products | color | 1 | -1 | -1 | 4 | 
+Selected successfully into null
+DEBUG: select srcRel=ATTRIBUTECAT, srcRelId=1
+DEBUG: getAttrCatEntry(relId=1, attr=RelName) returned 0
+Sales | id | 0 | -1 | -1 | 0 | 
+Sales | storeId | 0 | -1 | -1 | 1 | 
+Sales | productId | 0 | -1 | -1 | 2 | 
+Sales | purchaser | 1 | -1 | -1 | 3 | 
+Sales | discount | 0 | -1 | -1 | 4 | 
+Sales | billId | 0 | -1 | -1 | 5 | 
+Selected successfully into null
+DEBUG: select srcRel=ATTRIBUTECAT, srcRelId=1
+DEBUG: getAttrCatEntry(relId=1, attr=RelName) returned 0
+Bills | id | 0 | -1 | -1 | 0 | 
+Bills | totalCost | 0 | -1 | -1 | 1 | 
+Bills | tax | 0 | -1 | -1 | 2 | 
+Bills | tip | 0 | -1 | -1 | 3 | 
+Selected successfully into null
+DEBUG: select srcRel=ATTRIBUTECAT, srcRelId=1
+DEBUG: getAttrCatEntry(relId=1, attr=RelName) returned 0
+Stores | id | 0 | -1 | -1 | 0 | 
+Stores | name | 1 | -1 | -1 | 1 | 
+Stores | owner | 1 | -1 | -1 | 2 | 
+Stores | location | 1 | -1 | -1 | 3 | 
+Stores | startDate | 1 | -1 | -1 | 4 | 
+Selected successfully into null
+--------------------------------------------------
+
+----Opening new relations----
+Relation Products opened successfully
+Relation Stores opened successfully
+-----------------------------
+
+----Populating new relations----
+File path: ../Files/Input_Files/s8products.csv
+50 rows inserted successfully
+File path: ../Files/Input_Files/s8stores.csv
+50 rows inserted successfully
+--------------------------------
+
+----Selecting from new relation----
+DEBUG: select srcRel=Stores, srcRelId=3
+DEBUG: getAttrCatEntry(relId=3, attr=owner) returned 0
+2005 | store5 | Gomez | Maharashtra | 2-2-2001 | 
+2014 | store14 | Gomez | Maharashtra | 12-10-2001 | 
+2020 | store20 | Gomez | Maharashtra | 11-2-2000 | 
+2029 | store29 | Gomez | Maharashtra | 22-1-2000 | 
+2035 | store35 | Gomez | Maharashtra | 21-9-2001 | 
+2044 | store44 | Gomez | Maharashtra | 18-12-2000 | 
+2050 | store50 | Gomez | Maharashtra | 28-8-2001 | 
+Selected successfully into null
+-----------------------------------
+
+----Deleting Products, Sales, Bills----
+Relation Products closed successfully
+Relation Products deleted successfully
+Relation Sales deleted successfully
+Relation Bills deleted successfully
+------------------------------
+
+----Printing the relation catalog entries again----
+- TODO:confirm that no entries are printed
+
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Selected successfully into null
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Selected successfully into null
+DEBUG: select srcRel=RELATIONCAT, srcRelId=0
+DEBUG: getAttrCatEntry(relId=0, attr=RelName) returned 0
+Selected successfully into null
+Done
+# EXIT
+Closing OpenRelTable...

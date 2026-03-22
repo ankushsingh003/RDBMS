@@ -528,8 +528,8 @@ int getOperator(string opStr) {
 
 // truncates a given name string to ATTR_NAME sized char array
 void attrToTruncatedArray(string nameString, char *nameArray) {
+  memset(nameArray, 0, ATTR_SIZE);
   string truncated = nameString.substr(0, ATTR_SIZE - 1);
-  truncated.c_str();
   strcpy(nameArray, truncated.c_str());
   if (nameString.size() >= ATTR_SIZE) {
     printf("(warning: \'%s\' truncated to \'%s\')\n", nameString.c_str(), nameArray);
