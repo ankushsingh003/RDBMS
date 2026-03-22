@@ -1,6 +1,6 @@
 #include "Frontend.h"
-
-#include <cstring>
+#include <stdio.h>
+#include <string.h>
 #include <iostream>
 
 int Frontend::create_table(char relname[ATTR_SIZE], int no_attrs, char attributes[][ATTR_SIZE],
@@ -44,14 +44,12 @@ int Frontend::insert_into_table_values(char relname[ATTR_SIZE], int attr_count, 
 }
 
 int Frontend::select_from_table(char relname_source[ATTR_SIZE], char relname_target[ATTR_SIZE]) {
-  // Algebra::project
-  return SUCCESS;
+  return Algebra::project(relname_source, relname_target);
 }
 
 int Frontend::select_attrlist_from_table(char relname_source[ATTR_SIZE], char relname_target[ATTR_SIZE],
                                          int attr_count, char attr_list[][ATTR_SIZE]) {
-  // Algebra::project
-  return SUCCESS;
+  return Algebra::project(relname_source, relname_target, attr_count, attr_list);
 }
 
 int Frontend::select_from_table_where(char relname_source[ATTR_SIZE], char relname_target[ATTR_SIZE],
@@ -62,8 +60,25 @@ int Frontend::select_from_table_where(char relname_source[ATTR_SIZE], char relna
 int Frontend::select_attrlist_from_table_where(char relname_source[ATTR_SIZE], char relname_target[ATTR_SIZE],
                                                int attr_count, char attr_list[][ATTR_SIZE],
                                                char attribute[ATTR_SIZE], int op, char value[ATTR_SIZE]) {
-  // Algebra::select + Algebra::project??
-  return SUCCESS;
+  // 1. Select into .temp relation
+  int ret = Algebra::select(relname_source, (char*)TEMP, attribute, op, value);
+  if (ret != SUCCESS) return ret;
+
+  // 2. Open .temp relation
+  int tempRelId = OpenRelTable::openRel((char*)TEMP);
+  if (tempRelId < 0) {
+    Schema::deleteRel((char*)TEMP);
+    return tempRelId;
+  }
+
+  // 3. Project from .temp into target
+  ret = Algebra::project((char*)TEMP, relname_target, attr_count, attr_list);
+
+  // 4. Close and Delete .temp relation
+  OpenRelTable::closeRel(tempRelId);
+  Schema::deleteRel((char*)TEMP);
+
+  return ret;
 }
 
 int Frontend::select_from_join_where(char relname_source_one[ATTR_SIZE], char relname_source_two[ATTR_SIZE],
@@ -74,18 +89,16 @@ int Frontend::select_from_join_where(char relname_source_one[ATTR_SIZE], char re
 }
 
 int Frontend::select_attrlist_from_join_where(char relname_source_one[ATTR_SIZE], char relname_source_two[ATTR_SIZE],
-                                              char relname_target[ATTR_SIZE],
-                                              char join_attr_one[ATTR_SIZE], char join_attr_two[ATTR_SIZE],
-                                              int attr_count, char attr_list[][ATTR_SIZE]) {
+                                               char relname_target[ATTR_SIZE],
+                                               char join_attr_one[ATTR_SIZE], char join_attr_two[ATTR_SIZE],
+                                               int attr_count, char attr_list[][ATTR_SIZE]) {
   // Algebra::join + project
   return SUCCESS;
 }
 
 int Frontend::custom_function(int argc, char argv[][ATTR_SIZE]) {
-  // argc gives the size of the argv array
-  // argv stores every token delimited by space and comma
-
-  // implement whatever you desire
-
+  if (argc == 2 && strcmp(argv[0], "DISPLAY") == 0) {
+    return Algebra::display(argv[1]);
+  }
   return SUCCESS;
 }

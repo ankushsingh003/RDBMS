@@ -1,0 +1,44 @@
+# CREATE TABLE Toys(id NUM,name STR,colour STR,stock NUM);
+Error: Relation already exists
+# OPEN TABLE Toys;
+Relation Toys opened successfully
+# INSERT INTO Toys VALUES FROM toys.csv;
+File path: ../Files/Input_Files/toys.csv
+Invalid file path or file does not exist
+Error: Command Failed
+# SELECT * FROM Toys INTO ToysForSale WHERE stock > 3000;
+Error: Relation already exists
+# SELECT * FROM Toys INTO ToysToReorder WHERE stock <= 1000;
+Error: Relation already exists
+# SELECT name,colour FROM Toys INTO ToyColours;
+Selected successfully into ToyColours
+# SELECT * FROM Toys INTO ToysCopy;
+Error: Relation already exists
+# SELECT id,name FROM Toys INTO BlueToys WHERE colour = blue;
+Selected successfully into BlueToys
+# FUNCTION DISPLAY Toys;
+id | name | colour | stock | 
+--- | --- | --- | --- | 
+# FUNCTION DISPLAY ToysForSale;
+Error: Relation is not open
+# FUNCTION DISPLAY ToysToReorder;
+Error: Relation is not open
+# FUNCTION DISPLAY ToyColours;
+Error: Relation is not open
+# FUNCTION DISPLAY ToysCopy;
+Error: Relation is not open
+# FUNCTION DISPLAY BlueToys;
+Error: Relation is not open
+# CLOSE TABLE Toys;
+Relation Toys closed successfully
+# CLOSE TABLE ToysForSale;
+Error: Relation does not exist
+# CLOSE TABLE ToysToReorder;
+Error: Relation does not exist
+# CLOSE TABLE ToyColours;
+Error: Relation does not exist
+# CLOSE TABLE ToysCopy;
+Error: Relation does not exist
+# CLOSE TABLE BlueToys;
+Error: Relation does not exist
+# Closing OpenRelTable...

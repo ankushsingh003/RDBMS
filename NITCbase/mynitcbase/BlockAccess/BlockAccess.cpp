@@ -315,3 +315,49 @@ int BlockAccess::deleteRelation(char relName[ATTR_SIZE]) {
 
   return SUCCESS;
 }
+
+int BlockAccess::project(int relId, Attribute *record) {
+  // get the previous search index from the relation cache
+  RecId prevRecId;
+  RelCacheTable::getSearchIndex(relId, &prevRecId);
+
+  int blockNum, slotNum;
+
+  // if the search index is {-1, -1}, start from the beginning
+  if (prevRecId.block == -1 && prevRecId.slot == -1) {
+    RelCatEntry relCatBuf;
+    RelCacheTable::getRelCatEntry(relId, &relCatBuf);
+    blockNum = relCatBuf.firstBlk;
+    slotNum = 0;
+  } else {
+    blockNum = prevRecId.block;
+    slotNum = prevRecId.slot + 1;
+  }
+
+  while (blockNum != -1) {
+    RecBuffer recBuffer(blockNum);
+    HeadInfo header;
+    recBuffer.getHeader(&header);
+
+    unsigned char *slotMap = (unsigned char *)::malloc(header.numSlots);
+    recBuffer.getSlotMap(slotMap);
+
+    for (int i = slotNum; i < header.numSlots; i++) {
+        if (slotMap[i] == SLOT_OCCUPIED) {
+            recBuffer.getRecord(record, i);
+
+            RecId newRecId = {blockNum, i};
+            RelCacheTable::setSearchIndex(relId, &newRecId);
+
+            ::free(slotMap);
+            return SUCCESS;
+        }
+    }
+    blockNum = header.rblock;
+    slotNum = 0;
+    ::free(slotMap);
+  }
+
+  // if no more records are found, return E_NOTFOUND
+  return E_NOTFOUND;
+}

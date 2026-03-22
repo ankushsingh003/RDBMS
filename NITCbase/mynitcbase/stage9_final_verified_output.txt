@@ -1,0 +1,94 @@
+# DROP TABLE Toys;
+Relation Toys deleted successfully
+# DROP TABLE ToyColours;
+Relation ToyColours deleted successfully
+# DROP TABLE ToysForSale;
+Relation ToysForSale deleted successfully
+# DROP TABLE ToysToReorder;
+Relation ToysToReorder deleted successfully
+# DROP TABLE ToysCopy;
+Relation ToysCopy deleted successfully
+# DROP TABLE BlueToys;
+Relation BlueToys deleted successfully
+# CREATE TABLE Toys(id NUM,name STR,colour STR,stock NUM);
+Relation Toys created successfully
+# OPEN TABLE Toys;
+Relation Toys opened successfully
+# INSERT INTO Toys VALUES FROM toys.csv;
+File path: ../Files/Input_Files/toys.csv
+8 rows inserted successfully
+# SELECT * FROM Toys INTO ToysForSale WHERE stock > 3000;
+Selected successfully into ToysForSale
+# SELECT * FROM Toys INTO ToysToReorder WHERE stock <= 1000;
+Selected successfully into ToysToReorder
+# SELECT name,colour FROM Toys INTO ToyColours;
+Error: Relation already exists
+# SELECT * FROM Toys INTO ToysCopy;
+Selected successfully into ToysCopy
+# SELECT id,name FROM Toys INTO BlueToys WHERE colour = blue;
+Selected successfully into BlueToys
+# OPEN TABLE ToysForSale;
+Relation ToysForSale opened successfully
+# OPEN TABLE ToysToReorder;
+Relation ToysToReorder opened successfully
+# OPEN TABLE ToyColours;
+Relation ToyColours opened successfully
+# OPEN TABLE ToysCopy;
+Relation ToysCopy opened successfully
+# OPEN TABLE BlueToys;
+Relation BlueToys opened successfully
+# FUNCTION DISPLAY Toys;
+id | name | colour | stock | 
+--- | --- | --- | --- | 
+1 | Transformer | blue | 5000 | 
+2 | Lego | red | 2000 | 
+3 | Doll | pink | 800 | 
+4 | Car | blue | 1200 | 
+5 | Puzzle | green | 3500 | 
+6 | ActionFigure | blue | 4000 | 
+7 | BoardGame | yellow | 500 | 
+8 | TeddyBear | brown | 1500 | 
+# FUNCTION DISPLAY ToysForSale;
+id | name | colour | stock | 
+--- | --- | --- | --- | 
+1 | Transformer | blue | 5000 | 
+5 | Puzzle | green | 3500 | 
+6 | ActionFigure | blue | 4000 | 
+# FUNCTION DISPLAY ToysToReorder;
+id | name | colour | stock | 
+--- | --- | --- | --- | 
+3 | Doll | pink | 800 | 
+7 | BoardGame | yellow | 500 | 
+# FUNCTION DISPLAY ToyColours;
+name | colour | 
+--- | --- | 
+# FUNCTION DISPLAY ToysCopy;
+id | name | colour | stock | 
+--- | --- | --- | --- | 
+1 | Transformer | blue | 5000 | 
+2 | Lego | red | 2000 | 
+3 | Doll | pink | 800 | 
+4 | Car | blue | 1200 | 
+5 | Puzzle | green | 3500 | 
+6 | ActionFigure | blue | 4000 | 
+7 | BoardGame | yellow | 500 | 
+8 | TeddyBear | brown | 1500 | 
+# FUNCTION DISPLAY BlueToys;
+id | name | 
+--- | --- | 
+1 | Transformer | 
+4 | Car | 
+6 | ActionFigure | 
+# CLOSE TABLE Toys;
+Relation Toys closed successfully
+# CLOSE TABLE ToysForSale;
+Relation ToysForSale closed successfully
+# CLOSE TABLE ToysToReorder;
+Relation ToysToReorder closed successfully
+# CLOSE TABLE ToyColours;
+Relation ToyColours closed successfully
+# CLOSE TABLE ToysCopy;
+Relation ToysCopy closed successfully
+# CLOSE TABLE BlueToys;
+Relation BlueToys closed successfully
+# Closing OpenRelTable...

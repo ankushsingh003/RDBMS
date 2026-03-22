@@ -1,0 +1,39 @@
+# CREATE TABLE Toys(id NUM,name STR,colour STR,stock NUM);
+Relation Toys created successfully
+# OPEN TABLE Toys;
+Relation Toys opened successfully
+# IMPORT FROM ../Files/Input_Files/toys.csv INTO Toys;
+Syntax Error
+# SELECT name,colour FROM Toys INTO ToyColours;
+Selected successfully into ToyColours
+# SELECT * FROM Toys INTO ToysForSale WHERE stock > 3000;
+Selected successfully into ToysForSale
+# SELECT * FROM Toys INTO ToysToReorder WHERE stock <= 1000;
+Selected successfully into ToysToReorder
+# SELECT * FROM Toys INTO ToysCopy;
+Selected successfully into ToysCopy
+# SELECT id,name FROM Toys INTO BlueToys WHERE colour = blue;
+Error: Relation is not open
+# PRINT TABLE ToyColours;
+Syntax Error
+# PRINT TABLE ToysForSale;
+Syntax Error
+# PRINT TABLE ToysToReorder;
+Syntax Error
+# PRINT TABLE ToysCopy;
+Syntax Error
+# PRINT TABLE BlueToys;
+Syntax Error
+# CLOSE TABLE Toys;
+Relation Toys closed successfully
+# CLOSE TABLE ToyColours;
+Error: Relation does not exist
+# CLOSE TABLE ToysForSale;
+Error: Relation does not exist
+# CLOSE TABLE ToysToReorder;
+Error: Relation does not exist
+# CLOSE TABLE ToysCopy;
+Error: Relation does not exist
+# CLOSE TABLE BlueToys;
+Error: Relation does not exist
+# Closing OpenRelTable...
