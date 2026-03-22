@@ -4,39 +4,25 @@
 #include "FrontendInterface/FrontendInterface.h"
 #include <iostream>
 #include <cstring>
+#include <cstdio>
 
 int main(int argc, char *argv[]) {
   Disk disk_run;
-  StaticBuffer buffer; // Initialize the disk buffer
+  StaticBuffer buffer;
+  OpenRelTable cache;
 
-  RecBuffer relCatBlock(RELCAT_BLOCK);
+  for (int i = 0; i < 3; i++) {
+    RelCatEntry relCatBuf;
+    RelCacheTable::getRelCatEntry(i, &relCatBuf);
 
-  HeadInfo relCatHeader;
-  relCatBlock.getHeader(&relCatHeader);
+    printf("Relation: %s\n", relCatBuf.relName);
 
-  for (int i = 0; i < relCatHeader.numEntries; i++) {
+    for (int j = 0; j < relCatBuf.numAttrs; j++) {
+      AttrCatEntry attrCatBuf;
+      AttrCacheTable::getAttrCatEntry(i, j, &attrCatBuf);
 
-    Attribute relCatRecord[RELCAT_NO_ATTRS]; // RELCAT_NO_ATTRS = 6
-    relCatBlock.getRecord(relCatRecord, i);
-
-    printf("Relation: %s\n", relCatRecord[RELCAT_REL_NAME_INDEX].sVal);
-
-    RecBuffer attrCatBlock(ATTRCAT_BLOCK);
-
-    HeadInfo attrCatHeader;
-    attrCatBlock.getHeader(&attrCatHeader);
-
-    for (int j = 0; j < attrCatHeader.numEntries; j++) {
-
-      Attribute attrCatRecord[ATTRCAT_NO_ATTRS]; // ATTRCAT_NO_ATTRS = 6
-      attrCatBlock.getRecord(attrCatRecord, j);
-
-      if (strcmp(attrCatRecord[ATTRCAT_REL_NAME_INDEX].sVal, 
-                 relCatRecord[RELCAT_REL_NAME_INDEX].sVal) == 0) {
-        
-        const char *attrType = attrCatRecord[ATTRCAT_ATTR_TYPE_INDEX].nVal == NUMBER ? "NUM" : "STR";
-        printf("  %s: %s\n", attrCatRecord[ATTRCAT_ATTR_NAME_INDEX].sVal, attrType);
-      }
+      const char *attrType = attrCatBuf.attrType == NUMBER ? "NUM" : "STR";
+      printf("  %s: %s\n", attrCatBuf.attrName, attrType);
     }
     printf("\n");
   }
